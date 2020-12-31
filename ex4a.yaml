@@ -1,0 +1,14 @@
+---
+- name: NXOS_command
+  gather_facts: off
+  hosts: cisco6
+  tasks:
+    - ios_command:
+        commands:
+          - command: clear logging
+            prompt: confirm
+            answer: y
+      register: output
+    - debug:
+        msg: "{{ output }}"
+

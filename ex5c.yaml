@@ -1,0 +1,11 @@
+---
+- hosts: juniper
+  gather_facts: off
+  tasks:
+    - junos_command:
+        commands: show interfaces terse
+      register: interfaces
+
+    - debug:
+        msg: "Primary IP {{ interfaces['stdout_lines'][0][21].split()[4] }}"
+

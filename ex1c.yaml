@@ -1,0 +1,18 @@
+---
+- name: Ex1a 
+  gather_facts: False
+  hosts: arista5
+  tasks:
+    #- debug:
+    #    var: ansible_facts
+    #- debug:
+    #    var: net_all_ipv4_addresses
+    #- debug:
+    #    msg: "{{ inventory_hostname }}"
+    #- debug:
+    #    msg: "{{ ansible_network_os }}"
+    #- debug:
+    #    msg: "{{ ansible_host }}"
+    - debug:
+        msg: "{{ desired_eos_version }}"
+

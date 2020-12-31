@@ -1,0 +1,11 @@
+---
+- hosts: juniper
+  gather_facts: off
+  tasks:
+    - junos_command:
+        commands: show interfaces terse
+      register: interfaces
+
+    - debug:
+        var: interfaces
+

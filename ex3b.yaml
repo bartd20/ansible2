@@ -1,0 +1,13 @@
+---
+- name: NXOS_command
+  gather_facts: off
+  hosts: nxos
+  tasks:
+    - nxos_command:
+        commands: 
+          - show version
+          - show lldp neighbors
+      register: output
+    - debug:
+        msg: "{{ output }}"
+

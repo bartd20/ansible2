@@ -1,0 +1,20 @@
+---
+- name: Arista EOS
+  gather_facts: off
+  hosts: arista
+  tasks:
+    - eos_command:
+        commands: show ip arp
+      register: arp
+
+    - debug:
+        var: arp
+ 
+    - eos_command:
+        commands: show ip arp | json
+      register: arp_json
+
+    - debug:
+        var: arp_json
+
+

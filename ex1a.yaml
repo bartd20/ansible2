@@ -1,0 +1,9 @@
+---
+- name: Ex1a 
+  gather_facts: True
+  hosts: arista5
+  tasks:
+    - debug:
+        var: ansible_facts
+    - debug:
+        var: net_all_ipv4_addresses

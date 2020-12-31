@@ -1,0 +1,11 @@
+---
+- name: NXOS_command
+  gather_facts: off
+  hosts: nxos
+  tasks:
+    - nxos_command:
+        commands: show version
+      register: show_version
+    - debug:
+        msg: "{{ show_version }}"
+
